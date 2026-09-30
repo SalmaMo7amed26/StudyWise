@@ -1,14 +1,32 @@
 # StudyWise
-موقع شخصي لتنظيم الترم: المواد والمحاضرات والـLabs والمهام والدرجات وجدول المذاكرة الأسبوعي.
 
-## أسهل طريقة للتشغيل على ويندوز
-1. نزّلي Python وثبّتيه إذا لم يكن مثبتًا، مع تفعيل خيار **Add Python to PATH** أثناء التثبيت.
-2. افتحي مجلد المشروع، واضغطي ضغطتين على `Start StudyWise.vbs`.
-3. أول مرة قد يستغرق الإعداد دقيقة أو دقيقتين، وبعدها يفتح الموقع في المتصفح. اتركيه يعمل أثناء استخدام الموقع.
-4. لإغلاق الموقع، افتحي Task Manager وأنهي عملية `python` الخاصة بـStreamlit، أو استخدمي `run_windows.bat` بدل ملف VBS إذا أردتِ رؤية رسائل التشغيل.
+StudyWise is a personal study planner for organizing courses, lectures, labs, assignments, grades, and weekly study tasks.
 
-## التشغيل بالطريقة العادية
-افتحي المجلد واضغطي ضغطتين على `run_windows.bat`، أو شغّلي الأوامر التالية من Terminal داخل المجلد:
+## Features
+
+- Track lecture and lab study progress.
+- Keep assignments, quizzes, and projects with due dates.
+- Generate a suggested weekly study plan from upcoming deadlines and unfinished lessons.
+- Record coursework grades by subject.
+- Use the included SpongeBob-themed background across the app.
+
+## Run on Windows
+
+1. Install Python if it is not already installed. Select **Add Python to PATH** during setup.
+2. Open the project folder and double-click `Start StudyWise.vbs` for a quiet launch, or `run_windows.bat` to see startup messages.
+3. The first launch installs the required packages. Then open `http://localhost:8501` in your browser if it does not open automatically.
+4. Keep the launcher running while you use the site. To stop it, close the launcher window or stop the Streamlit process.
+
+## Run from a terminal
+
+Open Command Prompt in the project folder and run:
+
+```bat
+run_windows.bat
+```
+
+Alternatively, use Python directly:
+
 ```bash
 python -m venv venv
 venv\Scripts\activate
@@ -16,8 +34,8 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-يفتح الموقع عادةً على `http://localhost:8501`. ملف `studywise.db` يحفظ بياناتك محليًا؛ لا تحذفيه إذا أردتِ الاحتفاظ ببياناتك.
+## Your study data
 
-الجدول الأسبوعي يتكوّن من المهام التي لها مواعيد تسليم، والإضافات التي تكتبيها في صفحة Study Plan، والمحاضرات والـLabs التي حضرتيها ولم تنتهي مذاكرتها. بعد تحديث بياناتك اضغطي **Create table** مرة أخرى لتجديد الاقتراح.
+The app stores study progress in a local SQLite database named `studywise.db`. This file is excluded from GitHub, so your personal study data stays on your computer and is not included in the repository.
 
-النسخة الحالية مبدئيًا على Group B حسب صور الجدول المستخدمة عند إعدادها.
+The initial timetable is based on Group B.
